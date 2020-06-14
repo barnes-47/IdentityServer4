@@ -1,10 +1,8 @@
-﻿using IdentityModel;
-using IdentityModel.Client;
+﻿using IdentityModel.Client;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using System;
 using System.Net.Http;
-using System.Net.NetworkInformation;
 using System.Text;
 using System.Threading.Tasks;
 using static System.Console;
@@ -39,7 +37,7 @@ namespace ConsoleClient
         private const ConsoleColor Default = ConsoleColor.Gray;
         private const ConsoleColor White = ConsoleColor.White;
         private const ConsoleColor Yellow = ConsoleColor.Yellow;
-        
+
         #endregion
 
         static void Main(string[] args)
@@ -99,7 +97,7 @@ namespace ConsoleClient
             }
 
             var content = await response.Content.ReadAsStringAsync();
-            SetTextColorTo(DarkGreen);
+            SetTextColorTo(Green);
             WriteLine($"StatusCode: {response.StatusCode}");
             WriteLine($"Content:    {JObject.Parse(content)}");
         }
@@ -224,7 +222,7 @@ namespace ConsoleClient
                 return null;
             }
 
-            SetTextColorTo(DarkGreen);
+            SetTextColorTo(Green);
             WriteLine(response.Json);
 
             return response.AccessToken;
